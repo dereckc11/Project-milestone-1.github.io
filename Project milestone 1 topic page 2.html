@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Server Research - Request Parsing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <h1>Technical Component Research: Web Servers</h1>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="concurrency.html">Subtopic: Concurrency</a></li>
+            <li><a href="requests.html">Subtopic: Request Parsing</a></li>
+            <li><a href="concepts.html">Key Concepts</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
+    </header>
+
+    <main id="main-container">
+        <h2>Subtopic 2: Request & Response Parsing Pipelines</h2>
+        <p>When a browser makes contact with a web server over a network connection, it communicates by piping plain text streams down the wire. The web server's job is to read and interpret these streams accurately.</p>
+
+        <h3>Anatomy of a Parsed Request Stream</h3>
+        <p>The web server monitors the connection socket and parses incoming data line by line into predictable functional tokens:</p>
+        <ul>
+            <li><strong>The Request Line:</strong> Tells the server what action to perform (Method: <code>GET</code>, <code>POST</code>) and what resource to grab (URI: <code>/images/logo.png</code>).</li>
+            <li><strong>Header Maps:</strong> Key-value text parameters indicating variables like browser types, cache commands, or destination domain addresses.</li>
+        </ul>
+
+        <h3>HTTP Response Matrix</h3>
+        <p>After evaluating the request parameters, the server writes structured codes back across the wire. This table summarizes the main response categories used to guide browsers:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Status Code Range</th>
+                    <th>Classification Category</th>
+                    <th>Real-World Technical Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>200 - 299</strong></td>
+                    <td>Success Indicators</td>
+                    <td><code>200 OK</code> - Resource successfully found and delivered.</td>
+                </tr>
+                <tr>
+                    <td><strong>300 - 399</strong></td>
+                    <td>Redirection Commands</td>
+                    <td><code>301 Moved Permanently</code> - Points browser to a new URL path.</td>
+                </tr>
+                <tr>
+                    <td><strong>400 - 499</strong></td>
+                    <td>Client Error Faults</td>
+                    <td><code>404 Not Found</code> - No file exists matching the requested path.</td>
+                </tr>
+                <tr>
+                    <td><strong>500 - 599</strong></td>
+                    <td>Server Code Crashes</td>
+                    <td><code>500 Internal Error</code> - The backend software broke during execution.</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>Assignment 1 - Educational Web Resource for High School Students</footer>
+</body>
+</html>
