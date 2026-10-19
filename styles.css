@@ -102,7 +102,7 @@ a { transition: background-color .15s ease, color .15s ease; }
 .back-top { margin: 24px 0 0; text-align: right; }
 .back-top a { color: var(--teal); font-weight: 700; }
 .site-footer {
-  background: var(--navy);
+  background: var(--teal);
   color: #dce7ed;
   text-align: center;
   padding: 22px 18px;
