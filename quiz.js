@@ -1,7 +1,7 @@
 
-// 1. Quiz Configuration & Answer Key
-const QUIZ_LIMIT_SECONDS = 10 * 60; // 10-minute time limit (600 seconds)
-const PASSING_SCORE = 7;            // 7 out of 10 (70%) required to pass
+// Quiz Configuration & Answer Key
+const QUIZ_LIMIT_SECONDS = 10 * 60;
+const PASSING_SCORE = 7;
 
 const quizKey = {
   1: {
@@ -51,12 +51,12 @@ const quizKey = {
   },
   10: {
     type: "radio",
-    answer: "WebAssembly",
+    answer: "HTML",
     correctLabel: "HTML"
   }
 };
 
-// 2. State Variables & DOM Elements
+// State Variables & DOM Elements
 let secondsLeft = QUIZ_LIMIT_SECONDS;
 let countdownId = null;
 let quizSubmitted = false;
@@ -72,14 +72,14 @@ const timeSpentText = document.getElementById("timeSpentText");
 const submitQuizBtn = document.getElementById("submitQuizBtn");
 const resetQuizBtn = document.getElementById("resetQuizBtn");
 
-// 3. Helper Function: Format Seconds as MM:SS
+// Helper Function: Format Seconds as MM:SS
 function formatMMSS(totalSeconds) {
   const mins = Math.floor(totalSeconds / 60);
   const secs = totalSeconds % 60;
   return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
 
-// 4. Countdown Timer Logic
+// Countdown Timer Logic
 function startCountdown() {
   clearInterval(countdownId);
   timerClock.textContent = formatMMSS(secondsLeft);
@@ -102,7 +102,7 @@ function startCountdown() {
   }, 1000);
 }
 
-// 5. Quiz Grading & Color-Coded Feedback Logic
+// Quiz Grading & Color-Coded Feedback Logic
 function evaluateQuiz(wasAutoSubmitted = false) {
   if (quizSubmitted) return;
   quizSubmitted = true;
@@ -183,7 +183,7 @@ function evaluateQuiz(wasAutoSubmitted = false) {
   resultsBanner.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// 6. Reset / Retake Quiz Logic
+// Reset / Retake Quiz Logic
 function resetQuizState() {
   clearInterval(countdownId);
   quizSubmitted = false;
@@ -210,7 +210,7 @@ function resetQuizState() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// 7. Event Listeners & Initialization
+// Event Listeners & Initialization
 quizForm.addEventListener("submit", (e) => {
   e.preventDefault();
   evaluateQuiz(false);
