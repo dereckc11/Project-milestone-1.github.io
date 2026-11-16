@@ -7,39 +7,159 @@
   <title>Key Concepts | Browser Evolution</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="index.html">Browser Evolution</a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-<a href="history.html">History</a>
-<a href="technology.html">Technology</a>
-<a href="browsers.html">Major Browsers</a>
-<a href="concepts.html" aria-current="page">Key Concepts</a>
-<a href="references.html">References</a>
-          <a href="quiz.html">Quiz</a>
-<a href="about.html">About</a>
+        <a href="history.html">History</a>
+        <a href="technology.html">Technology</a>
+        <a href="browsers.html">Major Browsers</a>
+        <a href="concepts.html" aria-current="page">Key Concepts</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
+
   <main class="container">
     <section class="hero">
       <p class="eyebrow">IT 3203 | Web Technology Research</p>
       <h1>Seven Key Concepts to Understand</h1>
-      <p class="lead">These terms explain the main work a browser performs behind the scenes.</p>
+      <p class="lead">These terms explain the core technologies, protocols, and security layers a web browser relies on to turn code into a safe, interactive webpage.</p>
     </section>
-    <div class="content-grid">
-      <section class="content-card"><h2>1. URL</h2><p>A Uniform Resource Locator identifies where a web resource can be found.</p></section>
-<section class="content-card"><h2>2. HTTP and HTTPS</h2><p>HTTP defines web request-and-response communication. HTTPS protects that communication with TLS encryption and server authentication.</p></section>
-<section class="content-card"><h2>3. HTML</h2><p>HTML describes the structure and meaning of page content, including headings, paragraphs, links, images, and forms.</p></section>
-<section class="content-card"><h2>4. CSS</h2><p>CSS controls presentation such as color, spacing, typography, and responsive layout.</p></section>
-<section class="content-card"><h2>5. DOM</h2><p>The Document Object Model represents the document as objects that scripts can inspect and modify.</p></section>
-<section class="content-card"><h2>6. Rendering engine</h2><p>This component interprets web content and styles and produces the visible page.</p></section>
-<section class="content-card"><h2>7. Sandboxing and site isolation</h2><p>These security techniques restrict the effects of untrusted code and help separate unrelated websites.</p></section>
 
+    <div class="content-grid">
+      <section class="content-card">
+        <h2>1. URL (Uniform Resource Locator)</h2>
+        <p>A Uniform Resource Locator identifies where a web resource can be found on the internet. Before loading a page, the browser uses the Domain Name System (DNS) to translate the domain into a numeric server IP address.</p>
+        <ul class="concept-list">
+          <li><strong>Protocol:</strong> <code>https://</code> tells the browser how to connect.</li>
+          <li><strong>Domain &amp; Path:</strong> <code>://example.com</code> locates the host server and specific file.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>2. HTTP and HTTPS</h2>
+        <p>HTTP defines web request-and-response communication between a browser (client) and a web server. HTTPS wraps that traffic in TLS encryption and verifies the server's identity with a digital certificate.</p>
+        <ul class="concept-list">
+          <li><strong>Common Methods:</strong> <code>GET</code> requests data; <code>POST</code> submits form data.</li>
+          <li><strong>Status Codes:</strong> <code>200 OK</code> (success), <code>404 Not Found</code>, and <code>500 Server Error</code>.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>3. HTML (HyperText Markup Language)</h2>
+        <p>HTML describes the structure and meaning of page content, including headings, paragraphs, links, images, and forms. It acts as the structural skeleton of every webpage.</p>
+        <ul class="concept-list">
+          <li><strong>Semantic Tags:</strong> Elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;main&gt;</code> improve screen-reader accessibility and search indexing.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>4. CSS (Cascading Style Sheets)</h2>
+        <p>CSS controls visual presentation such as color, spacing, typography, and responsive layout without changing the underlying HTML structure.</p>
+        <ul class="concept-list">
+          <li><strong>Box Model:</strong> Every element is sized using content, padding, border, and margin.</li>
+          <li><strong>Modern Layouts:</strong> Flexbox and CSS Grid adapt pages cleanly across phones, tablets, and desktops.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>5. DOM (Document Object Model)</h2>
+        <p>The Document Object Model represents the parsed HTML document as a live tree of objects in memory that JavaScript can inspect and modify in real time.</p>
+        <ul class="concept-list">
+          <li><strong>Dynamic Updates:</strong> Interactive features like quiz scoring, timers, and dark-mode toggles work by updating DOM nodes without reloading the page.</li>
+        </ul>
+      </section>
+
+      <section class="content-card">
+        <h2>6. Rendering Engine</h2>
+        <p>This core browser component interprets HTML, CSS, and visual assets to paint the visible page on your screen—such as <strong>Blink</strong> (Chrome, Edge), <strong>WebKit</strong> (Safari), and <strong>Gecko</strong> (Firefox).</p>
+        <ul class="concept-list">
+          <li><strong>Critical Rendering Path:</strong> Builds the DOM and CSSOM trees, calculates element layout geometry, and paints pixels to the display.</li>
+        </ul>
+      </section>
+
+      <section class="content-card card-full">
+        <h2>7. Sandboxing and Site Isolation</h2>
+        <p>These modern security techniques restrict the effects of untrusted web code and keep unrelated websites separated in system memory so a compromised tab cannot harm your device.</p>
+        <ul class="concept-list">
+          <li><strong>Sandboxing:</strong> Locks each browser tab inside a restricted operating-system process so malicious scripts cannot access local files, cameras, or system settings without permission.</li>
+          <li><strong>Site Isolation:</strong> Ensures pages from different domains run in separate OS processes, protecting saved passwords and session cookies against side-channel attacks.</li>
+        </ul>
+      </section>
+
+      <section class="content-card card-full">
+        <h2>How They Work Together: From Click to Screen</h2>
+        <p>Every time you type a web address or click a link, these seven concepts run in sequence within fractions of a second:</p>
+        <ol class="lifecycle-list">
+          <li><strong>Locate (URL):</strong> The browser reads the URL and looks up the server's IP address via DNS.</li>
+          <li><strong>Fetch (HTTPS):</strong> It opens an encrypted connection and sends an HTTP <code>GET</code> request for the page.</li>
+          <li><strong>Parse (HTML &amp; DOM):</strong> As HTML arrives, the browser constructs the live DOM tree.</li>
+          <li><strong>Style &amp; Paint (CSS &amp; Rendering Engine):</strong> CSS rules are applied and the rendering engine lays out and paints the visible page.</li>
+          <li><strong>Protect (Sandboxing):</strong> The entire tab runs inside an isolated sandbox while you read or take a quiz.</li>
+        </ol>
+      </section>
+
+      <section class="content-card card-full">
+        <h2>Quick Reference Summary</h2>
+        <p>Use this comparison table as a study guide before taking the <a href="quiz.html">Browser Evolution Quiz</a>.</p>
+        <div class="table-wrap">
+          <table class="concepts-table">
+            <thead>
+              <tr>
+                <th>Concept</th>
+                <th>Primary Role</th>
+                <th>Real-World Analogy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>URL</strong></td>
+                <td>Identifies a resource's exact web address</td>
+                <td>A building's street address</td>
+              </tr>
+              <tr>
+                <td><strong>HTTP / HTTPS</strong></td>
+                <td>Transfers data securely between client and server</td>
+                <td>An armored delivery truck following traffic rules</td>
+              </tr>
+              <tr>
+                <td><strong>HTML</strong></td>
+                <td>Defines page structure and semantic meaning</td>
+                <td>The framing and walls of a house</td>
+              </tr>
+              <tr>
+                <td><strong>CSS</strong></td>
+                <td>Controls colors, fonts, spacing, and layout</td>
+                <td>Paint, lighting, and interior design</td>
+              </tr>
+              <tr>
+                <td><strong>DOM</strong></td>
+                <td>Provides a live tree for JavaScript updates</td>
+                <td>An interactive blueprint edited in real time</td>
+              </tr>
+              <tr>
+                <td><strong>Rendering Engine</strong></td>
+                <td>Converts HTML and CSS into visible pixels</td>
+                <td>The construction crew assembling the view</td>
+              </tr>
+              <tr>
+                <td><strong>Sandboxing</strong></td>
+                <td>Isolates tabs and blocks unauthorized access</td>
+                <td>Locked firewalls separating apartments</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
+
   </main>
+
   <footer class="site-footer">
     <p>IT 3203 class project:<a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener noreferrer"> 3203 Course Website. </a> | The Evolution of Web Browsers</p>
     <p>Educational resource; review linked sources for details and updates.</p>
