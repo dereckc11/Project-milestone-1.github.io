@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your knowledge of web browser history, rendering engines, web standards, and browser security.">
+  <title>Self-Assessment Quiz | Browser Evolution</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Browser Evolution</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="technology.html">Technology</a>
+        <a href="browsers.html">Major Browsers</a>
+        <a href="concepts.html">Key Concepts</a>
+        <a href="references.html">References</a>
+        <a href="quiz.html" aria-current="page">Quiz</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <section class="hero quiz-hero">
+      <div class="quiz-hero-text">
+        <p class="eyebrow">IT 3203 | Self-Assessment</p>
+        <h1>Browser Evolution Knowledge Quiz</h1>
+        <p class="lead">Complete all 10 questions within 10 minutes to assess your understanding of browser history, engines, standards, and security. Passing score: <strong>70% (7/10)</strong>.</p>
+      </div>
+      <div class="timer-panel" id="timerPanel" aria-live="polite">
+        <span class="timer-title">Time Remaining</span>
+        <span class="timer-clock" id="timerClock">10:00</span>
+      </div>
+    </section>
+
+    <section id="resultsBanner" class="content-card results-banner hidden" aria-live="assertive">
+      <div class="results-header">
+        <h2>Quiz Assessment Results</h2>
+        <span id="overallBadge" class="result-badge">PASS</span>
+      </div>
+      <div class="results-stats">
+        <div class="stat-item">
+          <span class="stat-label">Overall Result</span>
+          <strong class="stat-value" id="overallResultText">—</strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Total Score</span>
+          <strong class="stat-value" id="totalScoreText">0 / 10 (0%)</strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Time Spent</span>
+          <strong class="stat-value" id="timeSpentText">00:00</strong>
+        </div>
+      </div>
+      <p class="results-hint">Review each card below for your per-question score, result, and the correct answer.</p>
+    </section>
+
+    <form id="quizForm" class="quiz-form" novalidate>
+      <fieldset class="content-card question-block" id="q-block-1">
+        <legend class="q-type">Question 1 &bull; Fill in the Blank (1 Point)</legend>
+        <p class="q-prompt">Who created the world's first web browser, originally named <em>WorldWideWeb</em> (later <em>Nexus</em>), at CERN in 1990?</p>
+        <label for="q1" class="sr-only">Answer for Question 1</label>
+        <input type="text" id="q1" name="q1" class="quiz-text-input" placeholder="Type full name..." autocomplete="off">
+        <div class="q-feedback" id="q-feedback-1"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-2">
+        <legend class="q-type">Question 2 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">Which 1993 graphical browser developed at NCSA popularized the web by displaying images inline with text?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q2" value="Mosaic"> NCSA Mosaic</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="Opera"> Opera</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="Safari"> Apple Safari</label>
+          <label class="quiz-option"><input type="radio" name="q2" value="Lynx"> Lynx</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-2"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-3">
+        <legend class="q-type">Question 3 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">Which rendering engine powers Google Chrome, Microsoft Edge, Brave, and Opera today?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3" value="Gecko"> Gecko</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="Blink"> Blink</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="Trident"> Trident</label>
+          <label class="quiz-option"><input type="radio" name="q3" value="Presto"> Presto</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-3"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-4">
+        <legend class="q-type">Question 4 &bull; Multi-Select — Choose All That Apply (1 Point)</legend>
+        <p class="q-prompt">Which of the following are core components inside a modern web browser's architecture?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="checkbox" name="q4" value="Rendering Engine"> Rendering Engine (parses HTML and CSS)</label>
+          <label class="quiz-option"><input type="checkbox" name="q4" value="JavaScript Engine"> JavaScript Engine (such as V8 or SpiderMonkey)</label>
+          <label class="quiz-option"><input type="checkbox" name="q4" value="Networking Layer"> Networking Layer (handles HTTP/HTTPS requests)</label>
+          <label class="quiz-option"><input type="checkbox" name="q4" value="BIOS Firmware"> Motherboard BIOS Firmware</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-4"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-5">
+        <legend class="q-type">Question 5 &bull; Fill in the Blank (1 Point)</legend>
+        <p class="q-prompt">What 5-letter encrypted protocol uses TLS to protect data sent between a browser and a web server?</p>
+        <label for="q5" class="sr-only">Answer for Question 5</label>
+        <input type="text" id="q5" name="q5" class="quiz-text-input" placeholder="Enter 5-letter protocol..." autocomplete="off">
+        <div class="q-feedback" id="q-feedback-5"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-6">
+        <legend class="q-type">Question 6 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">Which open-source browser engine is developed by Mozilla and used in Firefox?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q6" value="WebKit"> WebKit</label>
+          <label class="quiz-option"><input type="radio" name="q6" value="Gecko"> Gecko</label>
+          <label class="quiz-option"><input type="radio" name="q6" value="EdgeHTML"> EdgeHTML</label>
+          <label class="quiz-option"><input type="radio" name="q6" value="KHTML"> KHTML</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-6"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-7">
+        <legend class="q-type">Question 7 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">What late-1990s competition between Netscape Navigator and Internet Explorer led to proprietary, incompatible web tags?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q7" value="First Browser War"> The First Browser War</label>
+          <label class="quiz-option"><input type="radio" name="q7" value="W3C Accord"> The W3C Accord</label>
+          <label class="quiz-option"><input type="radio" name="q7" value="Open Web Pact"> The Open Web Pact</label>
+          <label class="quiz-option"><input type="radio" name="q7" value="Mobile Transition"> The Mobile Transition</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-7"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-8">
+        <legend class="q-type">Question 8 &bull; Multi-Select — Choose All That Apply (1 Point)</legend>
+        <p class="q-prompt">Which browser features directly strengthen user security and privacy?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="checkbox" name="q8" value="Tab Sandboxing"> Multi-process tab sandboxing</label>
+          <label class="quiz-option"><input type="checkbox" name="q8" value="Cookie Blocking"> Blocking third-party tracking cookies</label>
+          <label class="quiz-option"><input type="checkbox" name="q8" value="HTTPS-Only"> HTTPS-Only Mode</label>
+          <label class="quiz-option"><input type="checkbox" name="q8" value="Disable TLS"> Disabling TLS certificate checks</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-8"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-9">
+        <legend class="q-type">Question 9 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">Which organization maintains open web standards such as HTML and CSS so sites render consistently across browsers?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q9" value="ICANN"> ICANN</label>
+          <label class="quiz-option"><input type="radio" name="q9" value="W3C"> W3C (World Wide Web Consortium)</label>
+          <label class="quiz-option"><input type="radio" name="q9" value="IEEE"> IEEE</label>
+          <label class="quiz-option"><input type="radio" name="q9" value="IANA"> IANA</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-9"></div>
+      </fieldset>
+
+      <fieldset class="content-card question-block" id="q-block-10">
+        <legend class="q-type">Question 10 &bull; Multiple Choice (1 Point)</legend>
+      </fieldset>
+    </form>
+  </main>
+</body>
+</html>
