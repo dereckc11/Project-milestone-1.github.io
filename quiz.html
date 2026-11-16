@@ -161,14 +161,31 @@
       </fieldset>
 
       <fieldset class="content-card question-block" id="q-block-10">
-  <legend class="q-type">Question 10 &bull; Multiple Choice (1 Point)</legend>
-    <p class="q-prompt">What's one of the seven key concepts listed</p>
-    <label class="quiz-option"><input type="radio" name="q10" value="HTML"> HTML</label>
-    <label class="quiz-option"><input type="radio" name="q10" value="IANA"> IANA</label>
-    <label class="quiz-option"><input type="radio" name="q10" value="FIREFOX"> FIREFOX</label>
-    <label class="quiz-option"><input type="radio" name="q10" value="WWW"> WWW (World Wide Web)</label>
-</fieldset>
-</form>
+        <legend class="q-type">Question 10 &bull; Multiple Choice (1 Point)</legend>
+        <p class="q-prompt">What's one of the seven key concepts listed?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q10" value="HTML"> HTML</label>
+          <label class="quiz-option"><input type="radio" name="q10" value="IANA"> IANA</label>
+          <label class="quiz-option"><input type="radio" name="q10" value="FIREFOX"> FIREFOX</label>
+          <label class="quiz-option"><input type="radio" name="q10" value="WWW"> WWW (World Wide Web)</label>
+        </div>
+        <div class="q-feedback" id="q-feedback-10"></div>
+      </fieldset>
+
+      <div class="quiz-controls">
+        <button type="submit" id="submitQuizBtn" class="quiz-btn quiz-btn-submit">Submit Quiz</button>
+        <button type="button" id="resetQuizBtn" class="quiz-btn quiz-btn-reset">Retake / Reset Quiz</button>
+      </div>
+    </form>
+
+    <p class="back-top"><a href="#top">Back to top &uarr;</a></p>
   </main>
+
+  <footer class="site-footer">
+    <p>IT 3203 class project:<a href="https://github.io" target="_blank" rel="noopener noreferrer"> 3203 Course Website. </a> | The Evolution of Web Browsers</p>
+    <p>Educational resource; review linked sources for details and updates.</p>
+  </footer>
+
+  <script src="quiz.js"></script>
 </body>
 </html>
